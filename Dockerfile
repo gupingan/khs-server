@@ -21,4 +21,5 @@ EXPOSE 5000
 ENV FLASK_APP=run.py
 
 # 运行Flask应用程序
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "run:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "--access-logfile", "-", "--error-logfile", "-", "run:app"]
+
