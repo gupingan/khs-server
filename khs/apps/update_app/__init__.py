@@ -9,6 +9,7 @@ platform_suffixes = current_app.config['PLATFORM_SUFFIXES']
 
 @update_app.before_request
 def before_request():
+    current_app.logger.info(UPDATE_FOLDER)
     UPDATE_FOLDER.mkdir(parents=True, exist_ok=True)
 
 
